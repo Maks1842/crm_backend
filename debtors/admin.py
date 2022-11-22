@@ -115,102 +115,47 @@ class Data_from_ROSP_Execut_ProductAdmin(admin.ModelAdmin):
                    'pristav_phone', 'date_request')
 
 
-# class PymentsAdmin(admin.ModelAdmin):
-#     list_display = ('id', 'creditor', 'number', 'date_start', 'date_ent', 'summa', 'interest_rate', 'overdue_od',
-#                     'overdue_percent', 'penalty', 'percent_of_od', 'gov_toll', 'debtor', 'cession', 'comment',
-#                     'is_deleted')
-#     search_fields = ()
-#     list_editable = ()
-#     list_filter = ()
-#     debtor = models.ForeignKey('Debtors', blank=True, on_delete=models.PROTECT, verbose_name='Должник')
-#     executive_document = models.ForeignKey('Executive_Documents', blank=True, on_delete=models.PROTECT, verbose_name='Испольнительный документ')
-#     date = models.DateField(verbose_name='Дата платежа')
-#     summa = models.FloatField(null=True, blank=True, verbose_name='Сумма платежа')
-#     payment_doc_num = models.CharField(max_length=50, blank=True, verbose_name='Номер платежного документа')
-#     comment = models.CharField(max_length=200, blank=True, verbose_name='Комментарий')
-#     is_deleted = models.BooleanField(default=False, verbose_name='Признак удаления')
-#
-#     class Meta:
-#         verbose_name = 'Платежи'
-#
-#
-# class LegalAdmin(admin.ModelAdmin):
-#     list_display = ('id', 'creditor', 'number', 'date_start', 'date_ent', 'summa', 'interest_rate', 'overdue_od',
-#                     'overdue_percent', 'penalty', 'percent_of_od', 'gov_toll', 'debtor', 'cession', 'comment',
-#                     'is_deleted')
-#     search_fields = ()
-#     list_editable = ()
-#     list_filter = ()
-#     debtor = models.ForeignKey('Debtors', blank=True, on_delete=models.PROTECT, verbose_name='Должник')
-#     executive_document = models.ForeignKey('Executive_Documents', blank=True, on_delete=models.PROTECT, verbose_name='Испольнительный документ')
-#     user = models.ForeignKey(User, blank=True, on_delete=models.PROTECT, verbose_name='Пользователь')
-#     status = models.CharField(max_length=50, blank=True, verbose_name='Статус юрист')
-#     comment = models.CharField(max_length=200, blank=True, verbose_name='Комментарий')
-#     is_deleted = models.BooleanField(default=False, verbose_name='Признак удаления')
-#
-#     class Meta:
-#         verbose_name = 'Судебный раздел'
-#
-#
-# class Mail_InAdmin(admin.ModelAdmin):
-#     list_display = ('id', )
-#     search_fields = ()
-#     list_editable = ()
-#     list_filter = ()
-#     sequence_num = models.IntegerField(verbose_name='Порядковый номер')
-#     debtor = models.ForeignKey('Debtors', blank=True, on_delete=models.PROTECT, verbose_name='Должник')
-#     status_ed = models.CharField(max_length=50, blank=True, verbose_name='Статус ИД')
-#     date = models.DateField(verbose_name='Дата корреспонденции')
-#     addresser = models.CharField(max_length=100, verbose_name='От кого')
-#     name_doc = models.CharField(max_length=100, verbose_name='Наименование документа')
-#     legal = models.ForeignKey('Legal', blank=True, on_delete=models.PROTECT, verbose_name='Судебка')
-#     comment = models.CharField(max_length=200, blank=True, verbose_name='Комментарий')
-#     is_deleted = models.BooleanField(default=False, verbose_name='Признак удаления')
-#
-#     class Meta:
-#         verbose_name = 'Входящая корреспонденция'
-#
-#
-# class Mail_OutAdmin(admin.ModelAdmin):
-#     list_display = ('id', )
-#     search_fields = ()
-#     list_editable = ()
-#     list_filter = ()
-#     sequence_num = models.IntegerField(verbose_name='Порядковый номер')
-#     executive_document = models.ForeignKey('Executive_Documents', blank=True, on_delete=models.PROTECT, verbose_name='Испольнительный документ')
-#     date = models.DateField(verbose_name='Дата корреспонденции')
-#     name_doc = models.CharField(max_length=100, verbose_name='Наименование документа')
-#     addresser = models.CharField(max_length=100, verbose_name='Адресат')
-#     recipient_organisation = models.CharField(max_length=200, verbose_name='Компания получателя получателя')
-#     recipient_address = models.CharField(max_length=200, verbose_name='Адрес получателя')
-#     recipient_index = models.CharField(max_length=200, verbose_name='Индекс получателя')
-#     mass = models.FloatField(null=True, blank=True, verbose_name='Масса отправления')
-#     gov_toll = models.FloatField(null=True, blank=True, verbose_name='Госпошлина')
-#     trek = models.CharField(max_length=20, blank=True, verbose_name='Трек номер')
-#     type_mail = models.CharField(max_length=20, verbose_name='Тип отправления')
-#     type_package = models.CharField(max_length=20, verbose_name='Тип конверта')
-#     type_mark = models.CharField(max_length=20, verbose_name='Тип марки')
-#     num_symbol = models.IntegerField(null=True, blank=True, verbose_name='Количество символов')
-#     debtor = models.ForeignKey('Debtors', blank=True, on_delete=models.PROTECT, verbose_name='Должник')
-#     user = models.ForeignKey(User, blank=True, on_delete=models.PROTECT, verbose_name='Пользователь')
-#     comment = models.CharField(max_length=200, blank=True, verbose_name='Комментарий')
-#     is_deleted = models.BooleanField(default=False, verbose_name='Признак удаления')
-#
-#     class Meta:
-#         verbose_name = 'Исходящая корреспонденция'
-#
-#
-# class Transaction_ExchangeAdmin(admin.ModelAdmin):
-#     list_display = ('id', )
-#     search_fields = ()
-#     list_editable = ()
-#     list_filter = ()
-#     model = models.CharField(max_length=50, verbose_name='Модель')
-#     field = models.CharField(max_length=50, verbose_name='Поле')
-#     old_data = models.CharField(max_length=2000, verbose_name='Старые данные')
-#     new_data = models.CharField(max_length=2000, verbose_name='Новые данные')
-#     date_exchange = models.DateTimeField(auto_now_add=True, verbose_name='Дата изменения данных')
-#     user = models.ForeignKey(User, on_delete=models.PROTECT, verbose_name='Пользователь')
+class PymentsAdmin(admin.ModelAdmin):
+    list_display = ('id', 'debtor', 'executive_document', 'date', 'summa', 'payment_doc_num', 'comment', 'is_deleted')
+    search_fields = ('debtor', 'executive_document', 'date', 'summa', 'payment_doc_num', 'comment', 'is_deleted')
+    list_editable = ('debtor', 'executive_document', 'date', 'summa', 'payment_doc_num', 'comment', 'is_deleted')
+    list_filter = ('debtor', 'executive_document', 'date', 'summa', 'payment_doc_num', 'comment', 'is_deleted')
+
+
+class LegalAdmin(admin.ModelAdmin):
+    list_display = ('id', 'debtor', 'executive_document', 'user', 'status', 'comment', 'is_deleted')
+    search_fields = ('debtor', 'executive_document', 'user', 'status', 'comment', 'is_deleted')
+    list_editable = ('debtor', 'executive_document', 'user', 'status', 'comment', 'is_deleted')
+    list_filter = ('debtor', 'executive_document', 'user', 'status', 'comment', 'is_deleted')
+
+
+class Mail_InAdmin(admin.ModelAdmin):
+    list_display = ('id', 'sequence_num', 'debtor', 'status_ed', 'date', 'addresser', 'name_doc', 'legal', 'comment', 'is_deleted')
+    search_fields = ('sequence_num', 'debtor', 'status_ed', 'date', 'addresser', 'name_doc', 'legal', 'comment', 'is_deleted')
+    list_editable = ('sequence_num', 'debtor', 'status_ed', 'date', 'addresser', 'name_doc', 'legal', 'comment', 'is_deleted')
+    list_filter = ('sequence_num', 'debtor', 'status_ed', 'date', 'addresser', 'name_doc', 'legal', 'comment', 'is_deleted')
+
+
+class Mail_OutAdmin(admin.ModelAdmin):
+    list_display = ('id', 'sequence_num', 'executive_document', 'date', 'name_doc', 'addresser', 'recipient_organisation',
+                    'recipient_address', 'recipient_index', 'mass', 'gov_toll', 'trek', 'type_mail', 'type_package',
+                    'type_mark', 'num_symbol', 'debtor', 'user', 'comment', 'is_deleted')
+    search_fields = ('sequence_num', 'executive_document', 'date', 'name_doc', 'addresser', 'recipient_organisation',
+                     'recipient_address', 'recipient_index', 'mass', 'gov_toll', 'trek', 'type_mail', 'type_package',
+                     'type_mark', 'num_symbol', 'debtor', 'user', 'comment', 'is_deleted')
+    list_editable = ('sequence_num', 'executive_document', 'date', 'name_doc', 'addresser', 'recipient_organisation',
+                     'recipient_address', 'recipient_index', 'mass', 'gov_toll', 'trek', 'type_mail', 'type_package',
+                     'type_mark', 'num_symbol', 'debtor', 'user', 'comment', 'is_deleted')
+    list_filter = ('sequence_num', 'executive_document', 'date', 'name_doc', 'addresser', 'recipient_organisation',
+                   'recipient_address', 'recipient_index', 'mass', 'gov_toll', 'trek', 'type_mail', 'type_package',
+                   'type_mark', 'num_symbol', 'debtor', 'user', 'comment', 'is_deleted')
+
+
+class Transaction_ExchangeAdmin(admin.ModelAdmin):
+    list_display = ('id', 'model', 'field', 'old_data', 'new_data', 'date_exchange', 'user')
+    search_fields = ('model', 'field', 'old_data', 'new_data', 'user')
+    list_editable = ('model', 'field', 'old_data', 'new_data', 'user')
+    list_filter = ('model', 'field', 'old_data', 'new_data', 'user')
 
 
 admin.site.register(Profile, ProfileAdmin)
@@ -224,3 +169,8 @@ admin.site.register(Executive_Documents, Executive_DocumentsAdmin)
 admin.site.register(Executive_Productions, Executive_ProductionsAdmin)
 admin.site.register(Collection_Debt, Collection_DebtAdmin)
 admin.site.register(Data_from_ROSP_Execut_Product, Data_from_ROSP_Execut_ProductAdmin)
+admin.site.register(Pyments, PymentsAdmin)
+admin.site.register(Legal, LegalAdmin)
+admin.site.register(Mail_In, Mail_InAdmin)
+admin.site.register(Mail_Out, Mail_OutAdmin)
+admin.site.register(Transaction_Exchange, Transaction_ExchangeAdmin)

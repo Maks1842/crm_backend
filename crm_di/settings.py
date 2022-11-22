@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'debug_toolbar',
     'debtors.apps.DebtorsConfig',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

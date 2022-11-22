@@ -20,6 +20,10 @@ class Profile(models.Model):
     def save_user_profile(sender, instance, **kwargs):
         instance.profile.save()
 
+    class Meta:
+        verbose_name = 'Профиль пользователя'
+        verbose_name_plural = 'Профили пользователей'
+
 
 class Departments(models.Model):
     name = models.CharField(max_length=50, blank=True, verbose_name='Подразделение')
@@ -56,6 +60,7 @@ class Library(models.Model):
 
     class Meta:
         verbose_name = 'Библиотека'
+        verbose_name_plural = 'Библиотека'
 
 
 class Cession(models.Model):
@@ -185,6 +190,7 @@ class Collection_Debt(models.Model):
 
     class Meta:
         verbose_name = 'Взыскание долга'
+        verbose_name_plural = 'Взыскание долга'
 
 
 '''Регулярные запросы в РОСП о статусе исполнительного производства.
@@ -212,6 +218,7 @@ class Data_from_ROSP_Execut_Product(models.Model):
 
     class Meta:
         verbose_name = 'Данные из РОСП об ИП'
+        verbose_name_plural = 'Данные из РОСП об ИП'
 
 
 class Pyments(models.Model):
@@ -225,6 +232,7 @@ class Pyments(models.Model):
 
     class Meta:
         verbose_name = 'Платежи'
+        verbose_name_plural = 'Платежи'
 
 
 class Legal(models.Model):
@@ -237,6 +245,7 @@ class Legal(models.Model):
 
     class Meta:
         verbose_name = 'Судебный раздел'
+        verbose_name_plural = 'Судебный раздел'
 
 
 class Mail_In(models.Model):
@@ -252,6 +261,7 @@ class Mail_In(models.Model):
 
     class Meta:
         verbose_name = 'Входящая корреспонденция'
+        verbose_name_plural = 'Входящая корреспонденция'
 
 
 class Mail_Out(models.Model):
@@ -277,6 +287,7 @@ class Mail_Out(models.Model):
 
     class Meta:
         verbose_name = 'Исходящая корреспонденция'
+        verbose_name_plural = 'Исходящая корреспонденция'
 
 
 class Transaction_Exchange(models.Model):
@@ -289,6 +300,7 @@ class Transaction_Exchange(models.Model):
 
     class Meta:
         verbose_name = 'Регистрация изменения данных'
+        verbose_name_plural = 'Регистрация изменения данных'
 
 
 
