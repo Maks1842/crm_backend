@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import *
+from .app_models import *
 
 
 class ProfileAdmin(admin.ModelAdmin):
@@ -38,16 +38,16 @@ class CessionAdmin(admin.ModelAdmin):
 
 
 class DebtorsAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name_1', 'name_2', 'pol', 'birthday', 'place_of_birth', 'passport_series', 'passport_num',
+    list_display = ('id', 'last_name_1', 'first_name_1', 'second_name_1', 'last_name_2', 'first_name_2', 'second_name_2', 'pol', 'birthday', 'place_of_birth', 'passport_series', 'passport_num',
                     'passport_date', 'passport_department', 'inn', 'snils', 'address_1', 'address_2', 'index_add_1',
                     'index_add_2', 'comment', 'is_deleted')
-    search_fields = ('name_1', 'name_2', 'pol', 'birthday', 'place_of_birth', 'passport_series', 'passport_num',
+    search_fields = ('last_name_1', 'first_name_1', 'second_name_1', 'last_name_2', 'first_name_2', 'second_name_2', 'pol', 'birthday', 'place_of_birth', 'passport_series', 'passport_num',
                      'passport_date', 'passport_department', 'inn', 'snils', 'address_1', 'address_2', 'index_add_1',
                      'index_add_2', 'comment', 'is_deleted')
-    list_editable = ('name_1', 'name_2', 'pol', 'birthday', 'place_of_birth', 'passport_series', 'passport_num',
+    list_editable = ('last_name_1', 'first_name_1', 'second_name_1', 'last_name_2', 'first_name_2', 'second_name_2', 'pol', 'birthday', 'place_of_birth', 'passport_series', 'passport_num',
                      'passport_date', 'passport_department', 'inn', 'snils', 'address_1', 'address_2', 'index_add_1',
                      'index_add_2', 'comment', 'is_deleted')
-    list_filter = ('name_1', 'name_2', 'pol', 'birthday', 'place_of_birth', 'passport_series', 'passport_num',
+    list_filter = ('last_name_1', 'first_name_1', 'second_name_1', 'last_name_2', 'first_name_2', 'second_name_2', 'pol', 'birthday', 'place_of_birth', 'passport_series', 'passport_num',
                    'passport_date', 'passport_department', 'inn', 'snils', 'address_1', 'address_2', 'index_add_1',
                    'index_add_2', 'comment', 'is_deleted')
 
