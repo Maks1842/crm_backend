@@ -8,8 +8,8 @@ from django.db import models
 class Data_from_ROSP_Execut_Product(models.Model):
     number = models.CharField(max_length=50, verbose_name='Номер исполнительного производства')
     debtor = models.CharField(max_length=100, blank=True, verbose_name='Должник')
-    date_on = models.DateField(verbose_name='Дата начала ИП')
-    date_end = models.DateField(blank=True, verbose_name='Дата окончания ИП')
+    date_on = models.DateField(verbose_name='Дата возбуждения ИП')
+    date_end = models.DateField(null=True, blank=True, verbose_name='Дата окончания ИП')
     reason_end = models.CharField(max_length=50, blank=True, verbose_name='Причина окончания')
     curent_debt = models.FloatField(null=True, blank=True, verbose_name='Текущая задолженность')
     summa_debt = models.FloatField(null=True, blank=True, verbose_name='Основной долг')

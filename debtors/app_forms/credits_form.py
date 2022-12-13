@@ -5,14 +5,14 @@ from ..app_models import Credits
 class CreditsForm(forms.ModelForm):
     class Meta:
         model = Credits
-        fields = ['creditor', 'number', 'date_start', 'date_ent', 'summa', 'interest_rate', 'overdue_od',
+        fields = ['creditor', 'number', 'date_start', 'date_end', 'summa', 'interest_rate', 'overdue_od',
                   'overdue_percent', 'penalty', 'percent_of_od', 'gov_toll', 'debtor', 'cession', 'comment',
                   'is_deleted']
         widgets = {
             'creditor': forms.TextInput(attrs={"class": "form-control"}),
             'number': forms.TextInput(attrs={"class": "form-control"}),
             'date_start': forms.DateInput(attrs={"class": "form-control"}),
-            'date_ent': forms.DateInput(attrs={"class": "form-control"}),
+            'date_end': forms.DateInput(attrs={"class": "form-control"}),
             'summa': forms.TextInput(attrs={"class": "form-control"}),
             'interest_rate': forms.TextInput(attrs={"class": "form-control"}),
             'overdue_od': forms.TextInput(attrs={"class": "form-control"}),

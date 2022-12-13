@@ -5,7 +5,7 @@ class Credits(models.Model):
     creditor = models.CharField(max_length=100, verbose_name='Кредитор')
     number = models.CharField(max_length=50, blank=True, verbose_name='Номер кредитного договора')
     date_start = models.DateField(verbose_name='Дата выдычи КД')
-    date_ent = models.CharField(max_length=100, blank=True, verbose_name='Срок КД')
+    date_end = models.CharField(max_length=100, blank=True, verbose_name='Срок КД')
     summa = models.FloatField(null=True, blank=True, verbose_name='Сумма КД')
     interest_rate = models.FloatField(null=True, blank=True, verbose_name='Процентная ставка по КД')
     overdue_od = models.FloatField(null=True, blank=True, verbose_name='Просроченный ОД')

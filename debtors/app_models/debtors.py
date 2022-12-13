@@ -9,7 +9,7 @@ class Debtors(models.Model):
     first_name_2 = models.CharField(max_length=20, null=True,  blank=True, verbose_name='Имя должника (изменения)')
     second_name_2 = models.CharField(max_length=20, null=True,  blank=True, verbose_name='Отчество должника (изменения)')
     pol = models.CharField(max_length=20, blank=True, verbose_name='Пол')
-    birthday = models.DateField(blank=True, verbose_name='Дата рождения')
+    birthday = models.DateField(null=True, blank=True, verbose_name='Дата рождения')
     place_of_birth = models.CharField(max_length=200, blank=True, verbose_name='Место рождения')
     passport_series = models.IntegerField(null=True, blank=True, verbose_name='Серия паспорта')
     passport_num = models.IntegerField(null=True, blank=True, verbose_name='Номер паспорта')

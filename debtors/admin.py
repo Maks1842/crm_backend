@@ -53,16 +53,16 @@ class DebtorsAdmin(admin.ModelAdmin):
 
 
 class CreditsAdmin(admin.ModelAdmin):
-    list_display = ('id', 'creditor', 'number', 'date_start', 'date_ent', 'summa', 'interest_rate', 'overdue_od',
+    list_display = ('id', 'creditor', 'number', 'date_start', 'date_end', 'summa', 'interest_rate', 'overdue_od',
                     'overdue_percent', 'penalty', 'percent_of_od', 'gov_toll', 'debtor', 'cession', 'comment',
                     'is_deleted')
-    search_fields = ('creditor', 'number', 'date_start', 'date_ent', 'summa', 'interest_rate', 'overdue_od',
+    search_fields = ('creditor', 'number', 'date_start', 'date_end', 'summa', 'interest_rate', 'overdue_od',
                      'overdue_percent', 'penalty', 'percent_of_od', 'gov_toll', 'debtor', 'cession', 'comment',
                      'is_deleted')
-    list_editable = ('creditor', 'number', 'date_start', 'date_ent', 'summa', 'interest_rate', 'overdue_od',
+    list_editable = ('creditor', 'number', 'date_start', 'date_end', 'summa', 'interest_rate', 'overdue_od',
                      'overdue_percent', 'penalty', 'percent_of_od', 'gov_toll', 'debtor', 'cession', 'comment',
                      'is_deleted')
-    list_filter = ('creditor', 'number', 'date_start', 'date_ent', 'summa', 'interest_rate', 'overdue_od',
+    list_filter = ('creditor', 'number', 'date_start', 'date_end', 'summa', 'interest_rate', 'overdue_od',
                    'overdue_percent', 'penalty', 'percent_of_od', 'gov_toll', 'debtor', 'cession', 'comment',
                    'is_deleted')
 
@@ -80,13 +80,17 @@ class Executive_DocumentsAdmin(admin.ModelAdmin):
 
 class Executive_ProductionsAdmin(admin.ModelAdmin):
     list_display = ('id', 'number', 'date_on', 'date_end', 'reason_end', 'curent_debt',
-                    'summa_debt', 'date_request', 'executive_document', 'comment', 'is_deleted')
+                    'summa_debt', 'rosp', 'address_rosp', 'pristav', 'pristav_phone', 'date_request',
+                    'executive_document', 'comment', 'is_deleted')
     search_fields = ('number', 'date_on', 'date_end', 'reason_end', 'curent_debt',
-                     'summa_debt', 'date_request', 'executive_document', 'comment', 'is_deleted')
+                     'summa_debt', 'rosp', 'address_rosp', 'pristav', 'pristav_phone', 'date_request',
+                     'executive_document', 'comment', 'is_deleted')
     list_editable = ('number', 'date_on', 'date_end', 'reason_end', 'curent_debt',
-                     'summa_debt', 'date_request', 'executive_document', 'comment', 'is_deleted')
+                     'summa_debt', 'rosp', 'address_rosp', 'pristav', 'pristav_phone', 'date_request',
+                     'executive_document', 'comment', 'is_deleted')
     list_filter = ('number', 'date_on', 'date_end', 'reason_end', 'curent_debt',
-                   'summa_debt', 'date_request', 'executive_document', 'comment', 'is_deleted')
+                   'summa_debt', 'rosp', 'address_rosp', 'pristav', 'pristav_phone', 'date_request',
+                   'executive_document', 'comment', 'is_deleted')
 
 
 class Collection_DebtAdmin(admin.ModelAdmin):
