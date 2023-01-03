@@ -6,6 +6,7 @@ from .debtors import Debtors
 from .departments import Departments
 from .executive_documents import Executive_Documents
 from .executive_productions import Executive_Productions
+from .imported_registry import Imported_Registry
 from .legal import Legal
 from .library import Library
 from .mail_in import Mail_In
@@ -13,6 +14,7 @@ from .mail_out import Mail_Out
 from .positions import Positions
 from .profile import Profile
 from .pyments import Pyments
+from .registry_headers import Registry_Headers
 from .transaction_exchange import Transaction_Exchange
 
 

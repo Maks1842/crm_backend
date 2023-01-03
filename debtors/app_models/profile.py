@@ -6,8 +6,8 @@ from django.dispatch import receiver
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.PROTECT, verbose_name='Пользователь')
-    department = models.ForeignKey('Departments', blank=True, on_delete=models.PROTECT, verbose_name='Подразделение')
-    position = models.ForeignKey('Positions', blank=True, on_delete=models.PROTECT, verbose_name='Должность')
+    department = models.ForeignKey('Departments', null=True, blank=True, on_delete=models.PROTECT, verbose_name='Подразделение')
+    position = models.ForeignKey('Positions', null=True, blank=True, on_delete=models.PROTECT, verbose_name='Должность')
     birthday = models.DateField(null=True, blank=True, verbose_name='День рождения')
     is_deleted = models.BooleanField(default=False, verbose_name='Признак удаления')
 

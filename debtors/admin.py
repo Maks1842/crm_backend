@@ -155,6 +155,19 @@ class Mail_OutAdmin(admin.ModelAdmin):
                    'type_mark', 'num_symbol', 'debtor', 'user', 'comment', 'is_deleted')
 
 
+class Imported_RegistryAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name', 'date', 'registry', 'comment')
+    search_fields = ('name', 'date', 'registry', 'comment')
+    list_editable = ('name', 'date', 'registry', 'comment')
+    list_filter = ('name', 'date')
+
+
+class Registry_HeadersAdmin(admin.ModelAdmin):
+    list_display = ('id', 'headers', 'name_field', 'turn', 'redactor')
+    search_fields = ('headers', 'name_field', 'turn', 'redactor')
+    list_editable = ('headers', 'name_field', 'turn', 'redactor')
+
+
 class Transaction_ExchangeAdmin(admin.ModelAdmin):
     list_display = ('id', 'model', 'field', 'old_data', 'new_data', 'date_exchange', 'user')
     search_fields = ('model', 'field', 'old_data', 'new_data', 'user')
@@ -177,4 +190,6 @@ admin.site.register(Pyments, PymentsAdmin)
 admin.site.register(Legal, LegalAdmin)
 admin.site.register(Mail_In, Mail_InAdmin)
 admin.site.register(Mail_Out, Mail_OutAdmin)
+admin.site.register(Imported_Registry, Imported_RegistryAdmin)
+admin.site.register(Registry_Headers, Registry_HeadersAdmin)
 admin.site.register(Transaction_Exchange, Transaction_ExchangeAdmin)
