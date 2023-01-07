@@ -41,7 +41,7 @@ class GetRegistryFieldsAPIView(APIView):
     @action(detail=False, methods=['get'])
     def get(self, request):
 
-        models = [Collection_Debt, Credits, Debtors, Data_from_ROSP_Execut_Product, Executive_Documents,
+        models = [Cession, Collection_Debt, Credits, Debtors, Data_from_ROSP_Execut_Product, Executive_Documents,
                   Executive_Productions, Legal, Pyments]
 
         result = []
@@ -68,10 +68,13 @@ class GetHeadersAPIView(APIView):
     @action(detail=False, methods=['get'])
     def get(self, request):
 
-        queryset = Registry_Headers.objects.values_list('headers_key').order_by('turn')
+        queryset = Registry_Headers.objects.all().order_by('turn')
 
         headers = []
         for q in queryset:
-            headers.append(q[0])
 
-        return Response({"data": headers})
+            headers.append({"text": f"{q.headers}",
+                            "value": f"{q.headers_key}",
+                            "width": f"{q.width_field}"})
+
+        return Response(headers)

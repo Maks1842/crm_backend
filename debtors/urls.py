@@ -6,6 +6,8 @@ from rest_framework import permissions
 from drf_yasg2.views import get_schema_view
 from drf_yasg2 import openapi
 
+from .views_api.debtors_registry import GetDebtorsRegistryAPIView
+from .views_api.import_from_csv import ImportFromCSVAPIView
 from .views_api.registry_fields import GetRegistryFieldsAPIView, GetHeadersAPIView
 from .views_api.tests import GetDebtorsAPIView
 
@@ -35,7 +37,9 @@ urlpatterns = [
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 
     path('', index, name='home'),
+    path('api/v1/getDebtorsRegistry/', GetDebtorsRegistryAPIView.as_view(), name='GetDebtorsRegistry'),
     path('api/v1/getDebtors/', GetDebtorsAPIView.as_view(), name='getDebtors'),
     path('api/v1/getRegistryFields/', GetRegistryFieldsAPIView.as_view(), name='GetRegistryFields'),
     path('api/v1/getHeaders/', GetHeadersAPIView.as_view(), name='GetHeaders'),
+    path('api/v1/importFromCSV/', ImportFromCSVAPIView.as_view(), name='ImportFromCSV'),
 ]
